@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "login-element": {
+    "input-element": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/login-element",
+            "outputPath": "dist/input-element",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -58,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "login-element:build"
+            "browserTarget": "input-element:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "login-element:build:production"
+              "browserTarget": "input-element:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "login-element:build"
+            "browserTarget": "input-element:build"
           }
         },
         "test": {
@@ -103,7 +107,7 @@
         }
       }
     },
-    "login-element-e2e": {
+    "input-element-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "login-element:serve"
+            "devServerTarget": "input-element:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "login-element:serve:production"
+              "devServerTarget": "input-element:serve:production"
             }
           }
         },
@@ -132,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "login-element"
+  "defaultProject": "input-element"
 }
